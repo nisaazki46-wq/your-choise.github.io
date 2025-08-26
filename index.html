@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journify — Toko Journal Vintage</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <div class="brand-text">
+          <h1>Journify</h1>
+          <p class="tagline">Kurasi Journal Estetik & Fungsional</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#koleksi">Koleksi</a>
+        <a href="#best">Best Seller</a>
+        <a href="#tentang">Tentang</a>
+      </nav>
+
+      <div class="actions">
+        <div class="search" role="search">
+          <input id="searchInput" type="text" placeholder="Cari journal, motif, warna..." aria-label="Cari produk" />
+          <button id="searchBtn" class="btn ghost" aria-label="Cari">🔎</button>
+        </div>
+
+        <button class="btn cart" id="cartBtn" aria-label="Keranjang belanja">
+          🧺 <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Catat kisahmu dengan sentuhan <span class="accent">vintage</span>.</h2>
+          <p class="lead">Paper premium, jilid tahan lama, desain minimal & hangat. Pilihan warna cream & putih untuk suasana calm.</p>
+          <div class="cta">
+            <a href="#koleksi" class="btn primary">Lihat Koleksi</a>
+            <button class="btn outline" id="openGuide">Panduan Memilih</button>
+          </div>
+        </div>
+
+        <div class="hero-showcase" aria-hidden="true">
+          <div class="stack">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Journal vintage di meja kayu" />
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Aneka alat tulis dan journal" />
+            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0ea?q=80&w=1200&auto=format&fit=crop" alt="Detail kertas berkualitas" />
+          </div>
+        </div>
+      </div>
+      <div class="grain" aria-hidden="true"></div>
+    </section>
+
+    <!-- BEST SELLER -->
+    <section id="best" class="best container">
+      <h3 class="section-title">Best Seller</h3>
+      <div class="best-grid">
+        <article class="best-card reveal" data-tags="leather blank premium cokelat">
+          <img src="https://images.unsplash.com/photo-1531064566582-83ebc02f3a79?q=80&w=1200&auto=format&fit=crop" alt="Leather Classic" />
+          <div class="info">
+            <h4>Leather Classic</h4>
+            <p class="muted">Cover kulit, refillable, 160 gsm.</p>
+            <div class="price">Rp 189.000</div>
+            <button class="btn add" data-name="Leather Classic" data-price="189000">Tambah</button>
+          </div>
+        </article>
+
+        <article class="best-card reveal" data-tags="grid putih minimal">
+          <img src="https://images.unsplash.com/photo-1491841651911-c44c30c34548?q=80&w=1200&auto=format&fit=crop" alt="Grid Minimal" />
+          <div class="info">
+            <h4>Grid Minimal</h4>
+            <p class="muted">Grid 5mm — ideal bullet journal.</p>
+            <div class="price">Rp 129.000</div>
+            <button class="btn add" data-name="Grid Minimal" data-price="129000">Tambah</button>
+          </div>
+        </article>
+
+        <article class="best-card reveal" data-tags="dotted cream bullet">
+          <img src="https://images.unsplash.com/photo-1509057199576-632a47484ece?q=80&w=1200&auto=format&fit=crop" alt="Dotted Cream" />
+          <div class="info">
+            <h4>Dotted Cream</h4>
+            <p class="muted">Kertas 120 gsm, tinta tidak tembus.</p>
+            <div class="price">Rp 139.000</div>
+            <button class="btn add" data-name="Dotted Cream" data-price="139000">Tambah</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- KOLEKSI (catalog) -->
+    <section id="koleksi" class="catalog container">
+      <div class="catalog-head">
+        <h3 class="section-title">Koleksi</h3>
+        <div class="filters" role="toolbar" aria-label="Filter produk">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="dotted">Dotted</button>
+          <button class="chip" data-filter="grid">Grid</button>
+          <button class="chip" data-filter="lined">Lined</button>
+          <button class="chip" data-filter="leather">Leather</button>
+        </div>
+      </div>
+
+      <div class="grid" aria-live="polite">
+        <!-- JS akan mengisi item di sini -->
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="about">
+      <div class="container about-inner">
+        <div class="about-card reveal">
+          <h3>Tentang Journify</h3>
+          <p>Kami percaya tiap goresan punya cerita. Karena itu kami pilih material terbaik: kertas bebas asam & penjilidan kuat.</p>
+          <ul class="ticks">
+            <li>Paper 100–160 gsm, bebas asam</li>
+            <li>Refill tersedia untuk beberapa model</li>
+            <li>Garansi 30 hari</li>
+          </ul>
+        </div>
+        <div class="about-photo reveal">
+          <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896e1?q=80&w=1200&auto=format&fit=crop" alt="Workshop jurnal" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand small">
+        <span class="brand-mark">J</span>
+        <div class="brand-text">
+          <strong>Journify</strong>
+          <span class="muted">Sejak 2020</span>
+        </div>
+      </div>
+
+      <form class="newsletter" id="newsletterForm">
+        <label for="email">Dapatkan promo & tips journaling</label>
+        <div class="row">
+          <input type="email" id="email" placeholder="emailkamu@example.com" required />
+          <button class="btn primary" type="submit">Langganan</button>
+        </div>
+        <small class="note muted">Dengan berlangganan, kamu setuju dengan <a href="#">kebijakan privasi</a>.</small>
+      </form>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <dialog id="quickView" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" aria-label="Tutup">✕</button>
+      <div class="modal-body">
+        <img id="qvImg" alt="Preview produk" />
+        <div class="qv-info">
+          <h4 id="qvTitle"></h4>
+          <p id="qvDesc"></p>
+          <div class="price" id="qvPrice"></div>
+          <div class="row">
+            <button class="btn add" id="qvAdd">Tambah ke Keranjang</button>
+            <button class="btn outline" id="qvWish">Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
